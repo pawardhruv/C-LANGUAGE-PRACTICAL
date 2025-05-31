@@ -1,23 +1,30 @@
 // QUE-4 Write a C program that uses pointers to swap the values of two integers. Implement a function for the swapping operation.
-
 #include<stdio.h>
+ int main()
+ {
+    int a,b;
+    
 
-int main()
-{
-    int a = 10, b = 20;
-    int *p, *q;
-    p = &a;
-    q = &b;
+    printf("Pointer value of a:");
+    scanf("%d", &a);
 
-    printf("Before swapping:\n");
-    printf("a = %d\n", a);
-    printf("b = %d\n", b);
-    *p = *q;
-    *q = *p;
+    printf("Pointer value of b:");
+    scanf("%d", &b);
 
-    printf("After swapping:\n");
-    printf("a = %d\n", a);
-    printf("b = %d\n", b);
+    int *ptr1 = &a;
+    int *ptr2 = &b; 
+
+    printf("before swapping pointer value : %d\n", a);
+    printf("before swapping pointer value : %d\n", b);
+
+    *ptr1 = *ptr1+ *ptr2;
+    *ptr2 = *ptr1- *ptr2;
+    *ptr1 = *ptr1- *ptr2;
+    
+    printf("after swapping pointer value is  : %d\n", *ptr1);
+    printf("after swapping pointer value is : %d\n", *ptr2);
+   
 
     return 0;
-}
+ }
+
